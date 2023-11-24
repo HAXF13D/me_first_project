@@ -61,5 +61,9 @@ class InverseFilter(Filter):
 
 class NoFilter(Filter):
     def apply_to_pixel(self, r: int, g: int, b: int) -> tuple[int, int, int]:
-        # инвертирует цвета
-        return tuple(r, g, b)
+        result = []
+        # Случайный фильтр
+        # еще комментарий
+        for color in (r, g, b):
+            result.append(int(random.randint(0, 255))
+        return tuple(result)
