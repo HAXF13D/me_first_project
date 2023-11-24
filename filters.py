@@ -63,5 +63,6 @@ class RandomFilter(Filter):
     def apply_to_pixel(self, r: int, g: int, b: int) -> tuple[int, int, int]:
         result = []
         for color in (r, g, b):
-            result.append(int(random.randint(0, 255))
+            result.append(int(random.randint(0, 255)))
+            print(result)
         return tuple(result)
