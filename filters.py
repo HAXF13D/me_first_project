@@ -1,5 +1,6 @@
 from math import exp, e
 from PIL import Image
+import random
 
 
 class Filter:
@@ -55,4 +56,12 @@ class InverseFilter(Filter):
         result = []
         for color in (r, g, b):
             result.append(int((1 - exp(color / 255) / e) * 255))
+        return tuple(result)
+
+
+class RandomFilter(Filter):
+    def apply_to_pixel(self, r: int, g: int, b: int) -> tuple[int, int, int]:
+        result = []
+        for color in (r, g, b):
+            result.append(int(random.randint(0, 255))
         return tuple(result)
